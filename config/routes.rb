@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users
+  resources :smartagrics
   resources :detected_obstacles
-  root 'detected_obstacles#index'
+  root 'smartagrics#index'
 end

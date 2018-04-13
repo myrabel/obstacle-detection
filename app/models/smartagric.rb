@@ -1,0 +1,2 @@
+class Smartagric < ApplicationRecord
+end

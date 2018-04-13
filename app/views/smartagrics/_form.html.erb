@@ -1,0 +1,27 @@
+<%= form_with(model: smartagric, local: true) do |form| %>
+  <% if smartagric.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(smartagric.errors.count, "error") %> prohibited this smartagric from being saved:</h2>
+
+      <ul>
+      <% smartagric.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :mositurereads %>
+    <%= form.number_field :mositurereads, id: :smartagric_mositurereads %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phreads %>
+    <%= form.number_field :phreads, id: :smartagric_phreads %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

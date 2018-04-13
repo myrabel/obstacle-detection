@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ObstacleDetection</title>
+    <title>Smart Agriculture Using IoT</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,16 +9,27 @@
   </head>
   <nav class="navbar navbar-default navbar-top">
     <div class="container">
-        <nav class="navbar-brand"><%= link_to image_tag('ninja2.png') %></nav>
-        <ul id="user_links" class="nav navbar-nav navbar-right">
-          <li><h3>Navigation made easier</h3></li>
+        <nav class="navbar-brand"><%= link_to image_tag('logo.png') %></nav>
+          <% if user_signed_in? %>
+            <ul id="user_links" class="nav navbar-nav navbar-right">
+              <li><h3>Farming made easier</h3></li>
+              <li><%= link_to current_user.email %></li>
+              <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+            </ul>
+          <% else %>
+            <ul id="login_links" class="nav navbar-nav navbar-right">
+              <li><%= link_to "Sign in",  new_user_session_path %></li>
+            </ul>
+          <% end %>
         </ul>
         <ul id="login_links" class="nav navbar-nav navbar-left">
-          <li><h3>Park Easy</h3></li>
+          <li><h3>See your life</h3></li>
         </ul>
     </div>
   </nav>
   <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <div class="container">
       <%= yield %>
     </div>

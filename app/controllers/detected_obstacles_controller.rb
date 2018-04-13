@@ -1,5 +1,6 @@
 class DetectedObstaclesController < ApplicationController
   before_action :set_detected_obstacle, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /detected_obstacles
   # GET /detected_obstacles.json

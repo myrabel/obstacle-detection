@@ -16,8 +16,7 @@
       <tr>
         <td><%= smartagric.mositurereads %></td>
         <td><%= smartagric.phreads %></td>
-        <td><%= smartagric.created_at %></td>
-
+        <td><%= smartagric.created_at.strftime('%B %d, %Y') %></td>
       </tr>
     <% end %>
   </tbody>

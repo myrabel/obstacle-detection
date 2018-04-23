@@ -20,5 +20,5 @@ for a in arduino
     query = "INSERT INTO detected_obstacles (id, timestamps, distance, created_at, updated_at) VALUES (%s, %s, %s, %s, %s);"
     data = (id, timestamps, distance, created_at, updated_at)
     cur.execute(query, data)
-    conn.commit
+    conn.commit()
 conn.close

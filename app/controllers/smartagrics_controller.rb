@@ -5,7 +5,7 @@ class SmartagricsController < ApplicationController
   # GET /smartagrics
   # GET /smartagrics.json
   def index
-    @smartagrics = Smartagric.all
+    @smartagrics = Smartagric.all.order('created_at DESC')
   end
 
   # GET /smartagrics/1

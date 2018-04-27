@@ -5,7 +5,7 @@ class SmartagricsController < ApplicationController
   # GET /smartagrics
   # GET /smartagrics.json
   def index
-    @smartagrics = Smartagric.all.order('created_at DESC')
+    @smartagrics = Smartagric.all.order('created_at DESC').paginate(page: params[:page])
   end
 
   # GET /smartagrics/1
